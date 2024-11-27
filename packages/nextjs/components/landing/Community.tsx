@@ -1,9 +1,8 @@
 import Link from 'next/link'
 import React from 'react'
 
-type Props = {}
 
-const Community = (props: Props) => {
+const Community = () => {
     return (
         <div className='container flex flex-col items-center gap-5 md:gap-10'>
             <div className='text-[20px] md:text-[36px] font-bold'>Join the AURAX Community</div>

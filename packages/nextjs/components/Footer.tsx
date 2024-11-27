@@ -35,7 +35,7 @@ export const Footer = () => {
             </div>
           </div>
           <div className="flex flex-col gap-3">
-            <div className="text-[16px] font-semibold">Subscribe to Aurax's newsletter for exclusive updates.</div>
+            <div className="text-[16px] font-semibold">Subscribe to newsletter of Aurax for exclusive updates.</div>
             <div className="flex flex-row">
               <input type="email" placeholder="Enter your email" onChange={handleChange} className="min-w-48 w-48 md:w-72 md:min-w-72 text-black text-[18px] rounded-tl-md rounded-bl-md px-3 py-1 bg-white"></input>
               <button className="rounded-tr-md rounded-br-md text-[24px] px-5 py-1 bg-primary">Subscribe</button>
