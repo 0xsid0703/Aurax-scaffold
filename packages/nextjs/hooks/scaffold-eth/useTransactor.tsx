@@ -1,4 +1,5 @@
 import { getPublicClient } from "@wagmi/core";
+import Link from "next/link";
 import { Hash, SendTransactionParameters, TransactionReceipt, WalletClient } from "viem";
 import { Config, useWalletClient } from "wagmi";
 import { SendTransactionMutate } from "wagmi/query";
@@ -19,9 +20,9 @@ const TxnNotification = ({ message, blockExplorerLink }: { message: string; bloc
     <div className={`flex flex-col ml-1 cursor-default`}>
       <p className="my-0">{message}</p>
       {blockExplorerLink && blockExplorerLink.length > 0 ? (
-        <a href={blockExplorerLink} target="_blank" rel="noreferrer" className="block link text-md">
+        <Link href={blockExplorerLink} target="_blank" rel="noreferrer" className="block link text-md">
           check out transaction
-        </a>
+        </Link>
       ) : null}
     </div>
   );

@@ -4,10 +4,10 @@ import { hardhat } from "viem/chains";
 import { CurrencyDollarIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { HeartIcon } from "@heroicons/react/24/outline";
 import { SwitchTheme } from "~~/components/SwitchTheme";
-import { BuidlGuidlLogo } from "~~/components/assets/BuidlGuidlLogo";
 import { Faucet } from "~~/components/scaffold-eth";
 import { useTargetNetwork } from "~~/hooks/scaffold-eth/useTargetNetwork";
 import { useGlobalState } from "~~/services/store/store";
+import { Copyright } from "lucide-react";
 
 /**
  * Site footer
@@ -17,63 +17,68 @@ export const Footer = () => {
   const { targetNetwork } = useTargetNetwork();
   const isLocalNetwork = targetNetwork.id === hardhat.id;
 
+  const handleChange = (e: any) => {
+    console.log(e.target.value)
+  }
   return (
-    <div className="min-h-0 py-5 px-1 mb-11 lg:mb-0">
-      <div>
-        <div className="fixed flex justify-between items-center w-full z-10 p-4 bottom-0 left-0 pointer-events-none">
-          <div className="flex flex-col md:flex-row gap-2 pointer-events-auto">
-            {nativeCurrencyPrice > 0 && (
-              <div>
-                <div className="btn btn-primary btn-sm font-normal gap-1 cursor-auto">
-                  <CurrencyDollarIcon className="h-4 w-4" />
-                  <span>{nativeCurrencyPrice.toFixed(2)}</span>
-                </div>
-              </div>
-            )}
-            {isLocalNetwork && (
-              <>
-                <Faucet />
-                <Link href="/blockexplorer" passHref className="btn btn-primary btn-sm font-normal gap-1">
-                  <MagnifyingGlassIcon className="h-4 w-4" />
-                  <span>Block Explorer</span>
-                </Link>
-              </>
-            )}
+    <div className="min-h-0 lg:mb-0 bg-base-100 flex flex-col items-center z-20">
+      <div className="container py-10 px-5 flex flex-col md:flex-row md:justify-between">
+        <div className="flex flex-col gap-16 items-center md:items-start">
+          <div className="flex flex-col gap-5">
+            <div className="flex flex-row gap-3 items-center">
+              <img src={'/logo.png'} className="w-10 h-10" />
+              <span className="text-[28px] font-bold">AURAX</span>
+            </div>
+            <div className="flex flex-row gap-3">
+              <Link className="text-[16px] text-gray-500 hover:text-white cursor-pointer font-semibold" href="/privacy-policy">Privacy Policy</Link>
+              <Link className="text-[16px] text-gray-500 hover:text-white cursor-pointer font-semibold" href="/terms-of-use">Terms of Use</Link>
+            </div>
           </div>
-          <SwitchTheme className={`pointer-events-auto ${isLocalNetwork ? "self-end md:self-auto" : ""}`} />
+          <div className="flex flex-col gap-3">
+            <div className="text-[16px] font-semibold">Subscribe to Aurax's newsletter for exclusive updates.</div>
+            <div className="flex flex-row">
+              <input type="email" placeholder="Enter your email" onChange={handleChange} className="min-w-48 w-48 md:w-72 md:min-w-72 text-black text-[18px] rounded-tl-md rounded-bl-md px-3 py-1 bg-white"></input>
+              <button className="rounded-tr-md rounded-br-md text-[24px] px-5 py-1 bg-primary">Subscribe</button>
+            </div>
+          </div>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+          <div className="flex flex-col gap-3">
+            <div className="text-[24px] font-bold">Aurax</div>
+            <Link className="text-[16px] text-gray-500 font-semibold hover:text-white" href="/careers">Careers</Link>
+            <Link className="text-[16px] text-gray-500 font-semibold hover:text-white" href="/media-kit">Media Kit</Link>
+          </div>
+          <div className="flex flex-col gap-3">
+            <div className="text-[24px] font-bold">Research</div>
+            <Link className="text-[16px] text-gray-500 font-semibold hover:text-white" href="/v2-stats">v2 Stats</Link>
+            <Link className="text-[16px] text-gray-500 font-semibold hover:text-white" href="/validator-security">Validator Security</Link>
+            <Link className="text-[16px] text-gray-500 font-semibold hover:text-white" href="/documentation">Documentation</Link>
+          </div>
+          <div className="flex flex-col gap-3">
+            <div className="text-[24px] font-bold">Developers</div>
+            <Link className="text-[16px] text-gray-500 font-semibold hover:text-white" href="/protocol-code">Protocol Code</Link>
+            <Link className="text-[16px] text-gray-500 font-semibold hover:text-white" href="/technical-docs">Technical Docs</Link>
+            <Link className="text-[16px] text-gray-500 font-semibold hover:text-white" href="/python-sdk">Python SDK</Link>
+            <Link className="text-[16px] text-gray-500 font-semibold hover:text-white" href="/typescript-sdk">Typescript SDK</Link>
+            <Link className="text-[16px] text-gray-500 font-semibold hover:text-white" href="/trail-of-bits-audit">Trail of Bits Audit</Link>
+            <Link className="text-[16px] text-gray-500 font-semibold hover:text-white" href="/neodyme-audit">Neodyme Audit</Link>
+            <Link className="text-[16px] text-gray-500 font-semibold hover:text-white" href="/connect-by-aurax-audit">CONNECT by AURAX Audit</Link>
+          </div>
+          <div className="flex flex-col gap-3">
+            <div className="text-[24px] font-bold">Social</div>
+            <Link className="text-[16px] text-gray-500 font-semibold hover:text-white flex flex-row gap-2 items-center" href="/twitter">
+              <img src={'/twitter.svg'} className="w-5 h-5" />
+              Twitter
+            </Link>
+            <Link className="text-[16px] text-gray-500 font-semibold hover:text-white flex flex-row gap-2 items-center" href="/discord">
+              <img src={'/discord.svg'} className="w-5 h-5" />
+              Discord
+            </Link>
+          </div>
         </div>
       </div>
-      <div className="w-full">
-        <ul className="menu menu-horizontal w-full">
-          <div className="flex justify-center items-center gap-2 text-sm w-full">
-            <div className="text-center">
-              <a href="https://github.com/scaffold-eth/se-2" target="_blank" rel="noreferrer" className="link">
-                Fork me
-              </a>
-            </div>
-            <span>·</span>
-            <div className="flex justify-center items-center gap-2">
-              <p className="m-0 text-center">
-                Built with <HeartIcon className="inline-block h-4 w-4" /> at
-              </p>
-              <a
-                className="flex justify-center items-center gap-1"
-                href="https://buidlguidl.com/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <BuidlGuidlLogo className="w-3 h-5 pb-1" />
-                <span className="link">BuidlGuidl</span>
-              </a>
-            </div>
-            <span>·</span>
-            <div className="text-center">
-              <a href="https://t.me/joinchat/KByvmRe5wkR-8F_zz6AjpA" target="_blank" rel="noreferrer" className="link">
-                Support
-              </a>
-            </div>
-          </div>
-        </ul>
+      <div className="border-t-[1px] border-t-gray-500 w-full text-center text-[12px] text-gray-600 flex flex-row gap-2 justify-center py-5">
+        <Copyright size={18} /> MINA protocol, {new Date().getFullYear()}. All rights reserved.
       </div>
     </div>
   );

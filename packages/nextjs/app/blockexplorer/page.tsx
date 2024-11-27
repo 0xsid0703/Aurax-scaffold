@@ -7,6 +7,7 @@ import { hardhat } from "viem/chains";
 import { useFetchBlocks } from "~~/hooks/scaffold-eth";
 import { useTargetNetwork } from "~~/hooks/scaffold-eth/useTargetNetwork";
 import { notification } from "~~/utils/scaffold-eth";
+import Link from "next/link";
 
 const BlockExplorer: NextPage = () => {
   const { blocks, transactionReceipts, currentPage, totalBlocks, setCurrentPage, error } = useFetchBlocks();
@@ -39,9 +40,9 @@ const BlockExplorer: NextPage = () => {
           </p>
           <p className="mt-1 break-normal">
             - You can use{" "}
-            <a className="text-accent" href={targetNetwork.blockExplorers?.default.url}>
+            <Link className="text-accent" href={targetNetwork.blockExplorers?.default.url as string}>
               {targetNetwork.blockExplorers?.default.name}
-            </a>{" "}
+            </Link>{" "}
             instead
           </p>
         </>,
