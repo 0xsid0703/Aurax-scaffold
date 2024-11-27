@@ -13,7 +13,6 @@
     "vercel": "vercel",
     "vercel:yolo": "vercel --build-env NEXT_PUBLIC_IGNORE_BUILD_ERROR=true"
   },
-  "installCommand": "npm install",
   "dependencies": {
     "@heroicons/react": "~2.1.5",
     "@rainbow-me/rainbowkit": "2.1.6",
