@@ -11,8 +11,7 @@
     "serve": "next start",
     "start": "next dev",
     "vercel": "vercel",
-    "vercel:yolo": "vercel --build-env NEXT_PUBLIC_IGNORE_BUILD_ERROR=true",
-    "postinstall": "npm install --save-dev husky"
+    "vercel:yolo": "vercel --build-env NEXT_PUBLIC_IGNORE_BUILD_ERROR=true"
   },
   "dependencies": {
     "@heroicons/react": "~2.1.5",
