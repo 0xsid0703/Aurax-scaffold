@@ -12,7 +12,7 @@
     "start": "next dev",
     "vercel": "vercel",
     "vercel:yolo": "vercel --build-env NEXT_PUBLIC_IGNORE_BUILD_ERROR=true",
-    "postinstall": "husky install || echo 'Skipping Husky install'"
+    "postinstall": "npm install --save-dev husky"
   },
   "dependencies": {
     "@heroicons/react": "~2.1.5",
