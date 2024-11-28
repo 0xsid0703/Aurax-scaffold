@@ -62,12 +62,12 @@ export const ContractTabs = ({ address, contractData }: PageProps) => {
             Code
           </button>
           <button
-            className={`tab  ${activeTab === "storage" ? "tab-active" : ""}`}
+            className={`tab ${activeTab === "storage" ? "tab-active" : ""}`}
             onClick={() => setActiveTab("storage")}
           >
             Storage
           </button>
-          <button className={`tab  ${activeTab === "logs" ? "tab-active" : ""}`} onClick={() => setActiveTab("logs")}>
+          <button className={`tab ${activeTab === "logs" ? "tab-active" : ""}`} onClick={() => setActiveTab("logs")}>
             Logs
           </button>
         </div>

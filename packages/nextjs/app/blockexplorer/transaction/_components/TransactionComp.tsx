@@ -38,14 +38,14 @@ const TransactionComp = ({ txHash }: { txHash: Hash }) => {
   }, [client, txHash]);
 
   return (
-    <div className="container mx-auto mt-10 mb-20 px-10 md:px-0">
-      <button className="btn btn-sm btn-primary" onClick={() => router.back()}>
+    <div className="container mx-auto mb-20 mt-10 px-10 md:px-0">
+      <button className="btn btn-primary btn-sm" onClick={() => router.back()}>
         Back
       </button>
       {transaction ? (
         <div className="overflow-x-auto">
-          <h2 className="text-3xl font-bold mb-4 text-center text-primary-content">Transaction Details</h2>{" "}
-          <table className="table rounded-lg bg-base-100 w-full shadow-lg md:table-lg table-md">
+          <h2 className="mb-4 text-center text-3xl font-bold text-primary-content">Transaction Details</h2>{" "}
+          <table className="table table-md w-full rounded-lg bg-base-100 shadow-lg md:table-lg">
             <tbody>
               <tr>
                 <td>
@@ -95,7 +95,7 @@ const TransactionComp = ({ txHash }: { txHash: Hash }) => {
                   <strong>Function called:</strong>
                 </td>
                 <td>
-                  <div className="w-full md:max-w-[600px] lg:max-w-[800px] overflow-x-auto whitespace-nowrap">
+                  <div className="w-full overflow-x-auto whitespace-nowrap md:max-w-[600px] lg:max-w-[800px]">
                     {functionCalled === "0x" ? (
                       "This transaction did not call any function."
                     ) : (
@@ -118,7 +118,7 @@ const TransactionComp = ({ txHash }: { txHash: Hash }) => {
                   <strong>Data:</strong>
                 </td>
                 <td className="form-control">
-                  <textarea readOnly value={transaction.input} className="p-0 textarea-primary bg-inherit h-[150px]" />
+                  <textarea readOnly value={transaction.input} className="textarea-primary h-[150px] bg-inherit p-0" />
                 </td>
               </tr>
               <tr>

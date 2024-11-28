@@ -89,8 +89,8 @@ export const AddressInput = ({ value, name, placeholder, onChange, disabled }: C
       reFocus={reFocus}
       prefix={
         ensName ? (
-          <div className="flex bg-base-300 rounded-l-full items-center">
-            {isEnsAvatarLoading && <div className="skeleton bg-base-200 w-[35px] h-[35px] rounded-full shrink-0"></div>}
+          <div className="flex items-center rounded-l-full bg-base-300">
+            {isEnsAvatarLoading && <div className="skeleton h-[35px] w-[35px] shrink-0 rounded-full bg-base-200"></div>}
             {ensAvatar ? (
               <span className="w-[35px]">
                 {
@@ -99,13 +99,13 @@ export const AddressInput = ({ value, name, placeholder, onChange, disabled }: C
                 }
               </span>
             ) : null}
-            <span className="text-accent px-2">{enteredEnsName ?? ensName}</span>
+            <span className="px-2 text-accent">{enteredEnsName ?? ensName}</span>
           </div>
         ) : (
           (isEnsNameLoading || isEnsAddressLoading) && (
-            <div className="flex bg-base-300 rounded-l-full items-center gap-2 pr-2">
-              <div className="skeleton bg-base-200 w-[35px] h-[35px] rounded-full shrink-0"></div>
-              <div className="skeleton bg-base-200 h-3 w-20"></div>
+            <div className="flex items-center gap-2 rounded-l-full bg-base-300 pr-2">
+              <div className="skeleton h-[35px] w-[35px] shrink-0 rounded-full bg-base-200"></div>
+              <div className="skeleton h-3 w-20 bg-base-200"></div>
             </div>
           )
         )

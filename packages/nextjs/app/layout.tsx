@@ -7,7 +7,6 @@ import { getMetadata } from "~~/utils/scaffold-eth/getMetadata";
 export const metadata = getMetadata({ title: "AURAX", description: "Built with 🏗 Scaffold-ETH 2" });
 
 const ScaffoldEthApp = ({ children }: { children: React.ReactNode }) => {
-
   return (
     <html suppressHydrationWarning>
       <body>

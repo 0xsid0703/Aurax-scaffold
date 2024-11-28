@@ -1,13 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { PaginationButton, SearchBar, TransactionsTable } from "./_components";
 import type { NextPage } from "next";
 import { hardhat } from "viem/chains";
 import { useFetchBlocks } from "~~/hooks/scaffold-eth";
 import { useTargetNetwork } from "~~/hooks/scaffold-eth/useTargetNetwork";
 import { notification } from "~~/utils/scaffold-eth";
-import Link from "next/link";
 
 const BlockExplorer: NextPage = () => {
   const { blocks, transactionReceipts, currentPage, totalBlocks, setCurrentPage, error } = useFetchBlocks();
@@ -31,12 +31,12 @@ const BlockExplorer: NextPage = () => {
     if (!isLocalNetwork) {
       notification.error(
         <>
-          <p className="font-bold mt-0 mb-1">
-            <code className="italic bg-base-300 text-base font-bold"> targeNetwork </code> is not localhost
+          <p className="mb-1 mt-0 font-bold">
+            <code className="bg-base-300 text-base font-bold italic"> targeNetwork </code> is not localhost
           </p>
           <p className="m-0">
-            - You are on <code className="italic bg-base-300 text-base font-bold">{targetNetwork.name}</code> .This
-            block explorer is only for <code className="italic bg-base-300 text-base font-bold">localhost</code>.
+            - You are on <code className="bg-base-300 text-base font-bold italic">{targetNetwork.name}</code> .This
+            block explorer is only for <code className="bg-base-300 text-base font-bold italic">localhost</code>.
           </p>
           <p className="mt-1 break-normal">
             - You can use{" "}
@@ -59,13 +59,13 @@ const BlockExplorer: NextPage = () => {
     if (hasError) {
       notification.error(
         <>
-          <p className="font-bold mt-0 mb-1">Cannot connect to local provider</p>
+          <p className="mb-1 mt-0 font-bold">Cannot connect to local provider</p>
           <p className="m-0">
-            - Did you forget to run <code className="italic bg-base-300 text-base font-bold">yarn chain</code> ?
+            - Did you forget to run <code className="bg-base-300 text-base font-bold italic">yarn chain</code> ?
           </p>
           <p className="mt-1 break-normal">
-            - Or you can change <code className="italic bg-base-300 text-base font-bold">targetNetwork</code> in{" "}
-            <code className="italic bg-base-300 text-base font-bold">scaffold.config.ts</code>
+            - Or you can change <code className="bg-base-300 text-base font-bold italic">targetNetwork</code> in{" "}
+            <code className="bg-base-300 text-base font-bold italic">scaffold.config.ts</code>
           </p>
         </>,
       );
