@@ -9,7 +9,7 @@ export const Stats = () => {
   ];
   return (
     <div className="container max-w-[1000px] px-5">
-      <div className="rounded-lg border border-gray-900 bg-[#080F1810] py-3 shadow-md">
+      <div className="rounded-lg border border-gray-800 bg-[#080F1810] py-3 shadow-md">
         <div className="grid grid-cols-3 divide-x divide-gray-600">
           {stats.map((stat, index) => (
             <div key={index} className="flex flex-col gap-2 px-3 text-center">

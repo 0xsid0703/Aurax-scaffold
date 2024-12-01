@@ -84,9 +84,8 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <div className="flex flex-grow flex-col items-center">
-        <div className="relative flex min-h-[910px] w-full max-w-full justify-center overflow-hidden bg-[url('/landing.webp')] bg-cover bg-[50%_50%] bg-no-repeat py-16">
-          <div className="absolute inset-0 z-[1] bg-black opacity-45 mix-blend-multiply"></div>
+      <div className="flex flex-grow flex-col items-center bg-['#19192E']">
+        <div className="relative flex min-h-[910px] w-full max-w-full justify-center overflow-hidden py-16">
           <div className="container z-10">
             <div className="flex w-full flex-col gap-10 px-5 md:px-0">
               <p className="text-center text-5xl text-white md:text-8xl">Ape Into Your Favorite Memes with Leverage</p>
@@ -97,11 +96,8 @@ const Home: NextPage = () => {
               </div>
             </div>
           </div>
-          <div className="absolute inset-x-0 bottom-0 z-[1] h-[250px] w-full bg-gradient-to-b from-transparent to-[#02070c]"></div>
         </div>
-        <div className="relative w-full bg-main-bg bg-cover bg-center bg-no-repeat py-24">
-          <div className="absolute inset-x-0 top-0 z-0 h-[250px] w-full bg-gradient-to-t from-transparent to-[#02070c]"></div>
-          <div className="absolute inset-0 bg-black opacity-25 mix-blend-multiply"></div>
+        <div className="relative w-full py-24">
           <div className="relative z-10 flex w-full flex-col items-center gap-28">
             <Stats />
             <Category />
